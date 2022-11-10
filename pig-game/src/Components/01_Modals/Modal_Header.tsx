@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Modal_Header({children}: {children: string}): JSX.Element {
+export const ModalHeader = ({children}: {children: string}) => {
   return (
     <>
         <h2>

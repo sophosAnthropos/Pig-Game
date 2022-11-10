@@ -1,35 +1,39 @@
-import React, {useState} from 'react';
-import Modal_Header from './Modal_Header';
-import How_To_Play from './Modal_Main_Content/00_Game_Explanation/How_To_Play';
-import Select_Die from './Modal_Main_Content/01_Die_Selection/Select_Die';
-import Modal_Button from './Modal_Button';
+import {useState, useContext} from 'react';
+import {ModalHeader} from './Modal_Header';
+import {ModalButton} from './Modal_Button';
+import { modalPhaseStates } from '../../Logic/Modal_Switcher';
+import { GameContainer } from '../02_Game/Game_Container';
+import { AppStateContext } from '../../Logic/App_State_Context';
 
-export default function Modal_Container(): JSX.Element {
+const {initial, secondary, final} = modalPhaseStates // modal phases for each time the modal button is clicked
 
-  const [header, setheader] = useState<string>("How to play");
-  const [main, setMain] = useState<JSX.Element>(<How_To_Play/>);
-  const [btnTxt, setBtnTxt] = useState<string>("Let's Go!");
+export const ModalContainer = (): JSX.Element => {
+  const [current, setState] = useState(initial);
+  const [,setAppState] = useContext(AppStateContext) // For final modal button to close modals, pass player data, and start game
+  
 
-  function onClick (): any {
-    setheader(()=>"CHOOSE THE DIE");
-    setMain((): JSX.Element =><Select_Die/>);
-    setBtnTxt((): string => "Continue")
-  }
-
+  const {header, main, BtnTxt} = current  //Extraction of state for use in multiple places
+  
   return (
     <div>
       <header>
-        <Modal_Header>
+        <ModalHeader>
           {header}
-        </Modal_Header>
+        </ModalHeader>
       </header>
       <main>
         {main}
       </main>
       <footer>
-        <Modal_Button onClick={onClick}>
-          {btnTxt}
-        </Modal_Button>
+        <ModalButton 
+          onClick={()=> {
+            let stateArg; // to allow conditional argument for setState
+            current === initial ? stateArg = secondary : stateArg = final;
+            current === final ? setAppState(GameContainer) : setState(stateArg);
+          }}
+        >
+          {BtnTxt}
+        </ModalButton>
       </footer>
     </div>
   )

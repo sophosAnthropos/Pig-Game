@@ -1,11 +1,10 @@
-import React from 'react'
-import Array_Of_die from '../../../../Logic/Array_Of_die'
+import {dieImgArray} from '../../../../Logic/Array_Of_Images'
 
-export default function Select_Die(): JSX.Element {
+export default function Select_Die() {
   return (
-    <div>
-        {Array_Of_die()}
-    </div>
+    <>
+      {dieImgArray}
+    </>
   )
 }
 

@@ -1,8 +1,6 @@
-import React from 'react'
-
-function Modal_Button (
-  {children, onClick}:{children: string, onClick: any}
-): JSX.Element {
+export const ModalButton = (
+  {children, onClick}:{children:string, onClick: any}
+): JSX.Element => {
   return (
     <button onClick={onClick}>
       {children}
@@ -10,4 +8,3 @@ function Modal_Button (
   )
 }
 
-export default Modal_Button

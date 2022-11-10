@@ -1,7 +1,7 @@
 import React from 'react';
 import Jack_Sparrow from '../../../../Assets/Images/Jack/Jack_Sparrow.png'
 
-export default function How_To_Play(): JSX.Element {
+export default function How_To_Play(){
   return (
     <>
         <p>
