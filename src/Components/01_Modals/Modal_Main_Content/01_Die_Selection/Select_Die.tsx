@@ -1,10 +1,13 @@
-import {dieImgArray} from '../../../../Logic/Array_Of_Images'
+import { imgArrMaker } from '../../../../Logic/Functions/Array_Of_Images'
 
 export const Select_Die = (): JSX.Element => {
-  return (
-    <>
-      {dieImgArray}
-    </>
-  )
+  
+    const dieImgArray: JSX.Element[] = imgArrMaker(0);
+
+    return (
+        <>
+            {dieImgArray}
+        </>
+    )
 }
 

@@ -1,12 +1,12 @@
-import {useContext} from 'react';
-import { DataContext } from '../00_App/App';
+import { useContext } from 'react';
+import { DataContext } from '../../Logic/Context/Data_Context';
 import { ColumnHeader } from '../Reusable_Components/For_Player_Columns/Column_Header';
 import { TurnPoints } from '../Reusable_Components/For_Player_Columns/Column_Points';
 import { TotalScore } from '../Reusable_Components/For_Player_Columns/Column_Game_Total';
-import { TiDieRes } from "./Title_Die_Reset/TitleDieReset";
+import { TiDieRes } from "./Title_Die_Reset/Title_And_Reset";
 import { DieBtn } from "./Title_Die_Reset/Die_Btn";
-import { dataRefTypes } from '../../Interfaces/Data_Ref_Context';
-import { DPSProvider } from '../../Logic/Die_Points_Scores';
+import { dataRefTypes } from '../../Interfaces/For_Data_Ref';
+import { DPSProvider } from '../../Logic/Context/Die_Points_Scores';
 
 export const GameContainer = (): JSX.Element => {
   
@@ -16,7 +16,7 @@ export const GameContainer = (): JSX.Element => {
       avatar: {index: {p1Index, p2Index}, 
       type: {p1Type, p2Type}}
     }
-  }:React.MutableRefObject<dataRefTypes> = useContext(DataContext);
+  }: React.MutableRefObject<dataRefTypes> = useContext(DataContext);
 
 
   return (

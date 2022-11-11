@@ -1,7 +1,7 @@
-import {useContext, useState} from 'react';
-import { DataContext } from "../../00_App/App";
-import { clicked } from '../../../Logic/Roll_Die';
-import { dpsContext } from '../../../Logic/Die_Points_Scores';
+import { useContext } from 'react';
+import { DataContext } from '../../../Logic/Context/Data_Context';
+import { dieClicked } from '../../../Logic/Functions/Roll_Die';
+import { dpsContext } from '../../../Logic/Context/Die_Points_Scores';
 
 export const DieBtn = () => {
     let {current: {die: {color, value, face}}} = useContext(DataContext);
@@ -9,7 +9,7 @@ export const DieBtn = () => {
 
     
     const rollDie = (rand: number) => {
-        clicked(value = rand, color, face = `One Two Three Four Five Six`.split(' ')[(rand-1)], setDie, setP1Points, setP2Points)
+        dieClicked(value = rand, color, face = `One Two Three Four Five Six`.split(' ')[(rand-1)], setDie, setP1Points, setP2Points)
     }
     
     return (

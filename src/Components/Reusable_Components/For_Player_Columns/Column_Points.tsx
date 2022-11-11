@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { dpsContext } from '../../../Logic/Die_Points_Scores';
+import { dpsContext } from '../../../Logic/Context/Die_Points_Scores';
 
 export const TurnPoints = ({player}: {player: number}): JSX.Element => {
     const {p1Points: [p1Points], p2Points: [p2Points] } = useContext(dpsContext)
@@ -10,4 +10,4 @@ export const TurnPoints = ({player}: {player: number}): JSX.Element => {
             </p>
         </section>
     )
-}
+} // Displays points depending on player turn

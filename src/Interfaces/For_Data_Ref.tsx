@@ -20,14 +20,6 @@ export interface dataRefTypes {
             p2Type: string,
         },
     },
-    turnPoints: {
-        p1Points: number,
-        p2Points: number,
-    },
-    totalScore: {
-      p1Score: number,
-      p2Score: number,
-    },
     die: {
         color: string,
         value: number,
@@ -55,14 +47,6 @@ export const gameDataRef: dataRefTypes = {
           p1Type: `standard`,
           p2Type: `standard`
         }
-      },
-      turnPoints: {
-        p1Points: 0,
-        p2Points: 0
-      },
-      totalScore: {
-        p1Score: 0,
-        p2Score: 0
       },
       die: {
         color: `Black`,

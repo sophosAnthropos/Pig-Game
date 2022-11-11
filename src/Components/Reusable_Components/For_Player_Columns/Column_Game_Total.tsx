@@ -1,6 +1,6 @@
 import { useContext } from 'react';
-import { dpsContext } from '../../../Logic/Die_Points_Scores';
-import { held } from '../../../Logic/Roll_Die';
+import { dpsContext } from '../../../Logic/Context/Die_Points_Scores';
+import { holdPoints } from '../../../Logic/Functions/Roll_Die';
 
 
 export const TotalScore = ({player}: {player: number}): JSX.Element => {
@@ -10,11 +10,13 @@ export const TotalScore = ({player}: {player: number}): JSX.Element => {
         p2Points: [p2Points, setP2Points], 
         p1Score: [p1Score, setP1Score], 
         p2Score: [p2Score, setP2Score]
-    } = useContext(dpsContext);
+    } = useContext(dpsContext); 
+    // states from context that will be passed into the holdPoints function located below in onClick. 
+    // these will allow the holdPoints function to add accumulated points to total score, reset points to 0, & switch player turns.
     
     return (
         <section>
-            <button onClick={()=>held(
+            <button onClick={()=>holdPoints(
                 p1Points, 
                 p2Points, 
                 setP1Points, 

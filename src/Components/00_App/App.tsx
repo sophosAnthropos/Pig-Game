@@ -1,20 +1,15 @@
-import React, { createContext, useContext, useRef } from 'react';
-import { AppStateContext } from '../../Logic/App_State_Context';
-import { dataRefTypes, gameDataRef } from '../../Interfaces/Data_Ref_Context';
-
-export const DataContext = createContext<React.MutableRefObject<dataRefTypes>>({current: {...gameDataRef}})
+import { useContext } from 'react';
+import { AppStateContext } from '../../Logic/Context/App_State_Context';
+import { DataProvider } from '../../Logic/Context/Data_Context';
 
 export const App = () => {
-  
   const [appState] = useContext(AppStateContext);
-
-  let gameData = useRef({...gameDataRef});
 
   return (
       <div>
-        <DataContext.Provider value={gameData}>
+        <DataProvider>
           {appState}
-        </DataContext.Provider>
+        </DataProvider>
       </div>
   );
 }

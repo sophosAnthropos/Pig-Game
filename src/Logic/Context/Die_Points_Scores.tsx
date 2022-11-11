@@ -1,5 +1,5 @@
-import { createContext, useState, useContext} from "react";
-import { DataContext } from '../Components/00_App/App'
+import { createContext, useState, useContext } from "react";
+import { DataContext } from './Data_Context'
 
 interface stateTypes {
     die: [JSX.Element, React.Dispatch<React.SetStateAction<JSX.Element>>],
@@ -16,6 +16,7 @@ export const dpsContext = createContext<stateTypes>({
     p1Score: [0, (v)=>v], 
     p2Score: [0, (v)=>v] 
 });
+
 
 export const DPSProvider = ({children}: {children: JSX.Element[]}): JSX.Element => {
     
