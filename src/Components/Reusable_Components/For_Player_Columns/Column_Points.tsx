@@ -1,8 +1,8 @@
 import { useContext } from 'react';
-import { dpsContext } from '../../../Logic/Context/Die_Points_Scores';
+import { AppStateContext } from '../../../Utilities/Context/App_State_Context';
 
 export const TurnPoints = ({player}: {player: number}): JSX.Element => {
-    const {p1Points: [p1Points], p2Points: [p2Points] } = useContext(dpsContext)
+    const {p1Points: [p1Points], p2Points: [p2Points] } = useContext(AppStateContext)
     return (
         <section>
             <p>

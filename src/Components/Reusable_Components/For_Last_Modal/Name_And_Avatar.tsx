@@ -1,25 +1,25 @@
 import { useContext } from 'react';
-import { DataContext } from '../../../Logic/Context/Data_Context';
+import { DataContext } from '../../../Utilities/Context/Data_Context';
 
-export const NamesAndAvatars =  ({children, player}: {children: JSX.Element[], player: string}): JSX.Element => {
+export const NamesAndAvatars =  ({children, player}: {children: JSX.Element[], player: number}): JSX.Element => {
     
-    let {current: {name: {p1Name, p2Name}}} = useContext(DataContext)
+    let dataRef = useContext(DataContext)
 
     return (
         <div>
             <div>
                 <h3>
-                    {player}
+                    {player === 1 ? `PLAYER 1` : `PLAYER 2`}
                 </h3>
             </div>
             <form>
                 <input
                     type="name" 
                     name="name" 
-                    placeholder='Enter Any Name You Choose' 
+                    placeholder='Enter Any Name You Wish' 
                     onChange={(e)=>{
                             e.preventDefault
-                        player === `PLAYER 1` ? p1Name = e.target.value : p2Name = e.target.value
+                        player === 1 ? dataRef.current.name.p1Name = `${e.target.value}` : dataRef.current.name.p2Name = `${e.target.value}`
                     }}
                 />
             </form>
