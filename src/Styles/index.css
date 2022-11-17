@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .appSize {
+        @apply w-full h-full min-w-[360px] max-w-[450px] sm:w-full sm:h-full sm:min-h-[600px] sm:min-w-[800px] sm:max-w-[1300px]
+    }
+    .modalSize {
+        @apply w-full h-full min-w-[360px] max-w-[450px] sm:w-1/3 sm:h-3/4 sm:min-w-[500px] sm:min-h-[450px]
+    }
+    .gameSize {
+        @apply w-full h-full min-w-[360px] max-w-[450px] sm:w-[90%] sm:h-4/5 sm:min-w-[500px] 
+    }
+
+
+
+
+
+    .paraEl {
+        @apply w-full text-fuchsia-700 text-start flex items-center h-1/6 pl-5 text-xl
+    }
+    .dieOptRow {
+        @apply w-full h-dieRow flex justify-evenly items-center
+    }
+    .playerCol {
+        @apply w-1/2 h-full flex flex-col
+    }
+    .pNames {
+        width: 50%;
+        font-size: 3rem;
+    }
+    .pPoints {
+        width: 52%;
+        font-size: 5rem;
+    }
+    .pTxt {
+        height: 80%;
+        font-weight: 800;
+        letter-spacing: 2px;
+        -webkit-text-stroke: 3px #fde047;
+        -webkit-text-fill-color: #60a5fa;
+    }
+    .checkD {
+        border: 2px solid red;
+    }
+    .scoreCon1 {
+        height: 27.5%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .scoreCon2 {
+        height: 27.5%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    .scoreNumTxt {
+        font-size: 5rem;
+        font-weight: 800;
+        letter-spacing: 2px;
+        -webkit-text-stroke: 3px #60a5fa;
+        -webkit-text-fill-color: #fde047;
+    }
+    .scoreNumTxtInv {
+        font-size: 5rem;
+        font-weight: 800;
+        letter-spacing: 2px;
+        -webkit-text-stroke: 3px #e4c73a;
+        -webkit-text-fill-color: #60a5fa;
+    }
+    .resetTxt {
+        font-size: 1.8rem;
+        font-weight: 800;
+        letter-spacing: 2px;
+        -webkit-text-stroke: 3px #60a5fa;
+        -webkit-text-fill-color: #fde047;
+    }
+    .titleTxt {
+        font-size: 3rem;
+        font-weight: 800;
+        letter-spacing: 2px;
+        -webkit-text-stroke: 4px #60a5fa;
+        -webkit-text-fill-color: #fde047;
+    }
+    .btnContent {
+        @apply text-fuchsia-300 text-lg font-bold
+    }
+    .gameDie {
+        @apply w-4/5 max-w-[400px] h-[90%] max-h-[400px] bg-neutral-200 rounded-2xl shadow-lg shadow-blue-700 transition ease-linear
+    }
+}

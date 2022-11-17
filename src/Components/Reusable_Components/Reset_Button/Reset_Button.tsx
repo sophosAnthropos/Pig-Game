@@ -49,8 +49,12 @@ export const ResetBtn = (): JSX.Element => {
                       }
                 };
             }}
+            className={`w-[24%] h-[65%] rounded-full bg-blue-400 flex justify-center items-end shadow-inner shadow-neutral-700 `}
         >
-            <img src="../../../../src/Assets/Images/controlIcons/resetIcon.png" alt="Nuclear mushroom cloud representing the ultimate reset"/>
+            <img 
+                  src="../../../../src/Assets/Images/controlIcons/resetIcon.png" alt="Nuclear mushroom cloud representing the ultimate reset"
+                  className='w-3/4 rounded-[40%] transition ease-linear hover:scale-[.97]'
+            />
         </button>
     )
 }

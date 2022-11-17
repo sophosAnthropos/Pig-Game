@@ -3,7 +3,7 @@ import { AppStateContext } from '../../../Utilities/Context/App_State_Context';
 import { DataContext } from '../../../Utilities/Context/Data_Context';
 import { WinnerScreen } from '../../03_Winner/Winner_Screen';
 
-export const ScoreBtn = ({children, clickFunc}: {children: JSX.Element[], clickFunc: ()=>void}) => {
+export const ScoreBtn = ({children, clickFunc, player}: {children: JSX.Element, clickFunc: ()=>void, player: number}) => {
 
     let dataRef = useContext(DataContext)
     // used to set name of winner to the first to hit winning score value
@@ -17,9 +17,14 @@ export const ScoreBtn = ({children, clickFunc}: {children: JSX.Element[], clickF
         setAppState(<WinnerScreen/>);
     }
 
-    return (    
-        <button onClick={clickFunc}>
-            {children}
-        </button>
+    return (  
+        <div className={`w-[42%] h-full flex ${player === 1 ?'justify-end' : 'justify-start'} items-center`}>
+            <button
+                onClick={clickFunc}
+                className={`group/btn w-3/4 h-[90%] p-3 flex flex-col justify-center items-center border-[15px] border-blue-400 rounded-3xl bg-neutral-500 transition ease-linear hover:bg-yellow-200 hover:scale-[.98] duration-150`}
+            >
+                {children}
+            </button>
+        </div>  
     )
 }
