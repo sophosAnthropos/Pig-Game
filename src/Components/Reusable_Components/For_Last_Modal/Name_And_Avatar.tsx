@@ -6,12 +6,36 @@ export const NamesAndAvatars =  ({children, player}: {children: JSX.Element[], p
     let dataRef = useContext(DataContext)
 
     return (
-        <div className={`w-full h-[45%] flex flex-col items-center justify-center border-solid ${player === 1 ? 'border-b-4 border-solid border-fuchsia-500' : 'border-none'}`}>
-            <div className='w-full h-[45%] flex'>
-                <h3 className='w-1/3 h-3/4 flex items-center justify-center text-fuchsia-500 text-2xl font-bold'>
+        <div 
+            className={`
+                w-full h-1/2 flex flex-col items-center justify-center ${player === 1 ? 'sm:border-b-[3px] sm:border-fuchsia-500' : 'sm:border-none'} 
+
+                sm:h-[45%] sm:px-4
+            `}
+        >
+            <div 
+                className={`
+                    w-full h-2/5 flex flex-col items-center
+
+                    sm:flex-row sm:items-start sm:h-[45%]
+                `}
+            >
+                <h3 
+                    className={`
+                        w-1/3 h-[45%] flex items-center justify-center text-fuchsia-500 mobileH3
+                        
+                        sm:h-3/4 sm:font-bold sm:laptopH3
+                    `}
+                >
                     {player === 1 ? `PLAYER 1` : `PLAYER 2`}
                 </h3>
-                <form className='w-full h-4/5 flex justify-center items-center'>
+                <form 
+                    className={`
+                        w-full h-[55%] flex justify-center items-center
+
+                        sm:h-[90%]
+                    `}
+                >
                     <input
                         type="name" 
                         name="name" 
@@ -20,12 +44,31 @@ export const NamesAndAvatars =  ({children, player}: {children: JSX.Element[], p
                                 e.preventDefault
                             player === 1 ? dataRef.current.name.p1Name = `${e.target.value}` : dataRef.current.name.p2Name = `${e.target.value}`
                         }}
-                        className='w-[95%] h-2/5 rounded-[50px] bg-blue-400 text-center text-fuchsia-600 font-bold outline-none border-none shadow-inner shadow-blue-700 placeholder:text-fuchsia-200'
+                        className={`
+                            w-full h-full pl-4 mobileTxtInput placeholder:nameInput placeholder:text-neutral-500 text-fuchsia-600 outline-none border-neutral-800 focus:text-fuchsia-500 focus:bg-neutral-700 focus:placeholder:text-fuchsia-200
+                            focus:shadow-txtInFocus focus:border-t-2 focus:border-l-2
+
+                            sm:w-[95%] sm:h-2/5 sm:rounded-[50px] sm:pl-0 sm:bg-blue-400 sm:nameInput sm:text-center sm:shadow-inner sm:shadow-blue-700 sm:placeholder:text-fuchsia-200
+                        `}
                     />
                 </form>
             </div>
-            <div className='w-full h-[45%] flex flex-col items-center'>
-                <div className='w-[95%] h-3/5 rounded-[50px] bg-blue-400 shadow-inner shadow-blue-700 flex justify-around items-center'>
+            <div 
+                className={`
+                    w-full h-3/5 flex items-center justify-center 
+
+                    sm:h-[45%]
+                `}
+            >
+                <div 
+                    className={`
+                        w-full h-full bg-blue-400 grid grid-cols-5 items-center px-2
+
+                        sm:w-[95%] sm:h-3/5 sm:rounded-[50px] sm:bg-blue-400 sm:shadow-inner sm:shadow-blue-700 sm:flex sm:justify-around
+
+                        
+                    `}
+                >
                     {children}
                 </div>
             </div>

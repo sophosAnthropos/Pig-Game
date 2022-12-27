@@ -13,21 +13,55 @@ export const ColumnHeader = ({player}: {player: number}): JSX.Element => {
     } = useContext(DataContext);
 
 
+    const flexJust = (num: number) => num === 1 ? 'sm:justify-start sm:items-end' : 'sm:justify-end sm:items-end'
+
     return (
         <header 
-            className={`w-full h-[45%] flex flex-col ${player === 1 ? 'justify-start' : 'justify-end'} items-center`}>
+            className={`
+                w-full h-1/2 flex flex-col
+                
+                sm:h-[45%]
+            `}
+        >
             <article 
-                className={`w-full h-[30%] flex ${player === 1 ? 'justify-start' : 'justify-end'} items-center`}>
+                className={`
+                    w-full h-1/2 flex justify-center items-end 
+                    
+                     sm:h-[35%] sm:items-center
+                `}
+            >
                 <h2 
-                    className='pNames pTxt flex justify-center items-center'>{player === 1 ? p1Name : p2Name}</h2>
+                    className={`
+                        w-[90%] headings playerTxtMobile flex justify-center items-end
+                        
+                        sm:w-full playerNames
+                    `}
+                >
+                    {player === 1 ? p1Name : p2Name}
+                </h2>
             </article>
             <article 
-                className={`w-4/5 h-[70%] flex ${player === 1 ? 'justify-start' : 'justify-end'} items-center`}>
-                <img 
-                    src={`../../../../src/Assets/Images/pigIcon/0${player === 1 ? p1Index : p2Index}_${player === 1 ? p1Type : p2Type}PigIcon.png`} 
-                    alt={`Pig face icon with ${player === 1 ? p1Type : p2Type} like appearance`}
-                    className={`w-2/5`}
-                />
+                className={`
+                    w-full h-2/5 flex justify-center items-end 
+                    
+                   sm:h-[65%]
+                `}
+            >
+                <div
+                    className={`
+                        w-full flex justify-center 
+                        
+                        sm:w-3/5 sm:h-full sm:items-end
+                    `}
+                >
+                    <img 
+                        src={`../../../../src/Assets/Images/pigIcon/0${player === 1 ? p1Index : p2Index}_${player === 1 ? p1Type : p2Type}PigIcon.png`} 
+
+                        alt={`Pig face icon with ${player === 1 ? p1Type : p2Type} like appearance`}
+
+                        className={`w-2/3  sm:playerAvatars`}
+                    />
+                </div>
             </article>
         </header>
     )

@@ -8,9 +8,15 @@ export const App = () => {
   const {app: [appState]} = useContext(AppStateContext);
 
   return (
-      <div className={`appSize  ${appState != <WinnerScreen/> ? 'bg-blue-400' : 'bg-winBg'} relative flex justify-center items-center`}>
+      <div 
+        className={`
+            fullContainers 
+            sm:appLaptop
+            ${appState != <WinnerScreen/> ? 'sm:bg-blue-400' : 'sm:bg-winBg'}
+          `}
+      >
         <DataProvider>
-          <GameContainer/>
+          {appState}
         </DataProvider>
       </div>
   );

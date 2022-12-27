@@ -18,10 +18,18 @@ export const ScoreBtn = ({children, clickFunc, player}: {children: JSX.Element, 
     }
 
     return (  
-        <div className={`w-[42%] h-full flex ${player === 1 ?'justify-end' : 'justify-start'} items-center`}>
+        <div 
+            className={`
+                sm:w-full sm:h-full sm:flex sm:justify-center sm:items-start
+            `}
+        >
             <button
                 onClick={clickFunc}
-                className={`group/btn w-3/4 h-[90%] p-3 flex flex-col justify-center items-center border-[15px] border-blue-400 rounded-3xl bg-neutral-500 transition ease-linear hover:bg-yellow-200 hover:scale-[.98] duration-150`}
+                className={`
+                    w-full
+
+                    sm:group/btn sm:scoreBtn sm:p-1 sm:flex sm:flex-col sm:justify-center sm:items-center sm:border-[5px] sm:border-neutral-700 sm:rounded-3xl sm:bg-neutral-500 sm:transition sm:ease-linear sm:hover:bg-yellow-200 sm:hover:scale-[.98] sm:duration-150
+                `}
             >
                 {children}
             </button>

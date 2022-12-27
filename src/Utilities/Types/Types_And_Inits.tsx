@@ -44,7 +44,7 @@ export interface dataRefTypes {
     Arrays: {
         dieColors: Array<string>,
         avatars: Array<string>
-    }
+    },    
 }
 
 // gameDataRef Obj is destructured in Data_Context.tsx initial values for the useRef({...IN HERE})
@@ -72,7 +72,7 @@ export const gameDataRef: dataRefTypes = {
       Arrays: {
         dieColors: ['Black', 'Blue', 'Green', 'Orange', 'Pink', 'Purple', 'Red', 'Yellow', 'Random'],
         avatars: [`standard`, `demon`, `fire`, `ice`, `earth`, `shadow`, `ghost`, `iron`, `robo`, `mystery`]
-      }
+      },
 };
 
 // gDRContext is passed as the type for createContext in Data_Context.tsx
@@ -83,6 +83,16 @@ export type gDRContext = React.MutableRefObject<dataRefTypes>
 
 
 
+
+
+
+// For turn based styling states in App_State_Context.tsx, and seen down below in appAndModalState. 
+export interface turnStyles {
+    turn: string,
+    backGround: string,
+}
+
+export type setTurnStyles = React.Dispatch<React.SetStateAction<turnStyles>>
 
 // Interfaces modSta & modPhases used by modalPhaseStates Obj, which is used to provide a set of properties to pass to the State Setter, provided by App_State_Context.tsx, in Modal_Container.tsx.
 // In Modal_Container.tsx the Obj entries will be used by the modal's btn to conditionally change the state of the modal. States are represented by phases: initial, secondary, & final.
@@ -113,7 +123,7 @@ export const modalPhaseStates: modPhases = {
         BtnTxt:`Continue`
     },
     final: {
-        header: `ENTER NAME & CHOOSE AVATARS`,
+        header: `NAMES & AVATARS`,
         main: <PlayersInputs/>,
         BtnTxt:`Let's Play!`
     },
@@ -127,8 +137,11 @@ export interface appAndModalStates {
     p2Points: numberStates,
     p1Score: numberStates
     p2Score: numberStates,
-    onClick: ()=>void
+    p1Turn: [turnStyles, React.Dispatch<React.SetStateAction<turnStyles>>],
+    p2Turn: [turnStyles, React.Dispatch<React.SetStateAction<turnStyles>>],
+    onClick: ()=>void,
 }
+
 
 export const aMSObjDestruct: appAndModalStates = {
     app: [<div/>, (v)=>v],
@@ -144,7 +157,9 @@ export const aMSObjDestruct: appAndModalStates = {
     p2Points: [0, (v)=>v],  
     p1Score: [0, (v)=>v], 
     p2Score: [0, (v)=>v], 
-    onClick: ()=>console.log(1)
+    p1Turn: [{turn:'', backGround:''}, (v)=>v],
+    p2Turn: [{turn:'', backGround:''}, (v)=>v],
+    onClick: ()=>console.log(1),
 } // provides an initial value for createContext in App_State_Context.tsx
 
 

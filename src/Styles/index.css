@@ -1,93 +1,461 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Press+Start+2P&display=swap');
 @tailwind base;
 @tailwind components;
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 @tailwind utilities;
 
 @layer components {
-    .appSize {
-        @apply w-full h-full min-w-[360px] max-w-[450px] sm:w-full sm:h-full sm:min-h-[600px] sm:min-w-[800px] sm:max-w-[1300px]
-    }
-    .modalSize {
-        @apply w-full h-full min-w-[360px] max-w-[450px] sm:w-1/3 sm:h-3/4 sm:min-w-[500px] sm:min-h-[450px]
-    }
-    .gameSize {
-        @apply w-full h-full min-w-[360px] max-w-[450px] sm:w-[90%] sm:h-4/5 sm:min-w-[500px] 
-    }
 
 
-
-
-
-    .paraEl {
-        @apply w-full text-fuchsia-700 text-start flex items-center h-1/6 pl-5 text-xl
-    }
-    .dieOptRow {
-        @apply w-full h-dieRow flex justify-evenly items-center
-    }
-    .playerCol {
-        @apply w-1/2 h-full flex flex-col
-    }
-    .pNames {
-        width: 50%;
-        font-size: 3rem;
-    }
-    .pPoints {
-        width: 52%;
-        font-size: 5rem;
-    }
-    .pTxt {
-        height: 80%;
-        font-weight: 800;
-        letter-spacing: 2px;
-        -webkit-text-stroke: 3px #fde047;
-        -webkit-text-fill-color: #60a5fa;
-    }
+    /* applies border for checking dimensions and positions */
     .checkD {
         border: 2px solid red;
     }
-    .scoreCon1 {
-        height: 27.5%;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
+
+
+
+
+
+
+
+    /* fonts */
+
+    .headings {
+        font-family: 'Luckiest Guy', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
     }
-    .scoreCon2 {
-        height: 27.5%;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
+
+    .numbers {
+        font-family: 'Press Start 2P', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
+
+    .nameInput {
+        font-size: clamp(1rem, 2vw, 1.3rem);
+    }
+    
+
     .scoreNumTxt {
-        font-size: 5rem;
-        font-weight: 800;
-        letter-spacing: 2px;
-        -webkit-text-stroke: 3px #60a5fa;
-        -webkit-text-fill-color: #fde047;
-    }
-    .scoreNumTxtInv {
-        font-size: 5rem;
-        font-weight: 800;
-        letter-spacing: 2px;
-        -webkit-text-stroke: 3px #e4c73a;
+        -webkit-text-stroke: 2px #f153ff;
         -webkit-text-fill-color: #60a5fa;
     }
-    .resetTxt {
-        font-size: 1.8rem;
+
+
+
+    /* Containers */
+
+    .fullContainers {
+        @apply w-full h-full sm:min-w-[650px]
+    }
+
+
+            /* Modal */
+    
+    .modalSize {
+        @apply w-full h-full min-w-[360px] min-h-[667px] sm:w-2/5 sm:h-4/5 sm:min-w-[500px] sm:max-w-[700px]
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+            /* Modal: How To play Content */
+    .h2PTxt {
+        font-size: clamp(1rem, 4vw, 1.25rem);
+        line-height: 1.4rem;
+    }
+
+    .h2PList {
+        @apply w-full text-fuchsia-700 text-start h-[15.5%] list-disc
+    }
+    
+
+
+
+
+            /* Modal: Die Selection Content */
+    .selectDie {
+        @apply h-full w-full flex flex-col justify-center items-center sm:w-4/5 sm:h-[90%] sm:min-h-[400px] sm:justify-evenly 
+    }
+
+    .diceRows {
+        @apply w-full h-[30%] flex justify-evenly items-center
+    }
+
+    .dieHover {
+        @apply transition ease-linear hover:bg-yellow-200 hover:border-neutral-900 active:scale-[.90] duration-100
+    }
+
+    .eachDieMobile {
+        @apply w-[30%] bg-neutral-400 rounded-[.5rem] cursor-pointer transition ease-linear active:scale-[.75]  duration-[15ms]
+    }
+
+    .eachDieLaptop {
+        @apply w-[23%] border-t-0 border-l-0 border-b-4 border-r-4 border-neutral-600 rounded-xl bg-neutral-100 shadow-dOShadow dieHover
+    }
+
+    .eachPig {
+        @apply w-full max-w-[75px] cursor-pointer transition  ease-linear active:scale-[.65] duration-[15ms] sm:w-[10%] sm:min-w-[42px] sm:max-w-[100px] sm:p-1 sm:border-none sm:rounded-full  sm:transition sm:ease-linear sm:hover:bg-neutral-300 sm:active:scale-[.80] sm:duration-100
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* Mobile */
+    .mobileH1 {
+        font-size: clamp(2.5rem, 9vh, 5rem);
+        font-weight: bold;
+    }
+
+
+    .mobileH2 {
+        font-size: clamp(1rem, 4vh, 3rem);
+    }
+
+
+    .mobileH3 {
+        font-size: clamp(1.5rem, 7vw, 2rem);
+    }
+
+
+    .mobileTxtInput {
+        font-size: clamp(1rem, 5vw, 2rem);
+        letter-spacing: clamp(1px, .2vw, 2px);
+    }
+
+
+    .modalBtnTxt-mobile {
+        font-size: clamp(1.25rem, 10vw, 3rem);
+        color: rgb(254 240 138);
+    }
+
+
+    .playerTxtMobile {
+        font-size: clamp(1.5rem, 8vw, 3.25rem);
+        font-weight: 600;
+        letter-spacing: clamp(1px, .25vw, 2px);
+        -webkit-text-stroke: clamp(1px,.4vw, 4px) #fde047;
+        -webkit-text-fill-color: #60a5fa;
+    }
+
+    
+    .oinkMobile {
         font-weight: 800;
         letter-spacing: 2px;
-        -webkit-text-stroke: 3px #60a5fa;
+        -webkit-text-stroke: 1px #60a5fa;
         -webkit-text-fill-color: #fde047;
     }
-    .titleTxt {
-        font-size: 3rem;
-        font-weight: 800;
-        letter-spacing: 2px;
-        -webkit-text-stroke: 4px #60a5fa;
+    
+
+    .scoreMobile {
+        @apply w-1/3 h-[17%] absolute bottom-0 bg-neutral-700 p-[5px] border-t-2 border-black
+    }
+
+
+    .scoreTxtMobile {
+        height: 50%;
+        font-size: clamp(.8rem, 1.8vh, 1.5rem);
+        font-weight: 400;
+        letter-spacing: 1.5px;
+        color: #fde047;
+    }
+
+    .scoreNumMobile {
+        font-size: clamp(1rem, 6.5vh, 5rem);
+    }
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* Laptop */
+
+
+        /*  */
+    .appLaptop {
+        @apply min-h-[900px] relative flex justify-center items-center 
+    }
+
+
+    .gameLaptop {
+        @apply w-[90%] h-[90%] min-w-[640px] max-w-[1200px] min-h-[600px] relative justify-center items-center z-[500]
+    }
+
+    .laptopH1 {
+        font-size: clamp(4rem, 7.2vw, 6rem);
+    }
+
+    .laptopH2 {
+        font-size: clamp(1.3rem, 2.65vw, 2.2rem);
+    }
+
+    .laptopH3 {
+        font-size: clamp(1.5rem, 3vw, 1.7rem);
+    }
+
+
+    .modalBtnTxt-laptop {
+        font-size: clamp(.5rem, 3.5vw, 1.7rem);
+    }
+
+
+    .oinkLaptop {
+        font-weight: 600;
+        letter-spacing: 0;
+        -webkit-text-stroke: clamp(1px, .1vw, 2px) #60a5fa;
         -webkit-text-fill-color: #fde047;
     }
-    .btnContent {
-        @apply text-fuchsia-300 text-lg font-bold
+
+    .dieBtnLaptop {
+        width: clamp(165px, 16vmax, 210px);
+        height: clamp(165px, 16vmax, 210px);
+        aspect-ratio: 1/1;
     }
+
+    .resetBtnLaptop {
+        width: clamp(135px, 13.6vmax, 180px);
+        height: clamp(60px, 6.1vmax, 80px);
+        aspect-ratio: 1/1;
+    }
+
+    .playerNames {
+        font-size: clamp(2rem, 4.2vw, 3.5rem);
+    }
+
+    .playerAvatars {
+        width: clamp(140px, 15vmax, 200px);
+        height: clamp(140px, 15vmax, 200px);
+        aspect-ratio: 1/1;
+    }
+
+    .pointsLaptop {
+        font-size: clamp(4rem, 8.3vw, 7rem)
+    }
+
+    
+    .scoreLaptop {
+        height: 27.5%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .scoreBtn {
+        width: clamp(135px, 14vmax, 185px);
+        height: clamp(135px, 14vmax, 185px);
+        aspect-ratio: 1/1;
+    }
+
+    .scoreTxtLaptop {
+        font-size: clamp(.8rem, 1.5vw, 1.2rem);
+        font-weight: 600;
+    }
+
+    .scoreNumLaptop {
+        font-size: clamp(1rem, 6vw, 5rem)
+    }
+
+    .scoreHover {
+        -webkit-text-stroke: 2px #60a5fa;
+        -webkit-text-fill-color: #f153ff;
+    }
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    /* Player turns on non-mobile devices */
+
+    
+    .playerTurnBorder {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .playerTurnDimensions {
+        content: "";
+        width: 250%;
+        height: 250%;
+        position: absolute;
+        top: -73%;
+        left: -72%;
+        z-index: 100;
+    }
+    
+    .playerTurnStyle {
+        background: conic-gradient(
+            #f2b5fd 0deg,
+            #fff 45deg, 
+            #f2b5fd 50deg, 
+            #f2b5fd 180deg, 
+            #fff 225deg, 
+            #f2b5fd 230deg
+        );
+    }
+
+    .p1BorderRad {
+        border-radius: 60px 0 0 60px;
+    }
+
+    .p2BorderRad {
+        border-radius: 0 60px 60px 0;
+    }
+
+    .notYourTurnStyle {
+        background: #f153ff;
+        animation: none;
+    }
+
+
+
+
+
+
+
+
+        /* Not your turn */
+    .notP1Turn {
+        @apply sm:playerTurnBorder
+    }
+
+    .notP1Turn::before {        
+        @apply sm:playerTurnDimensions sm:notYourTurnStyle sm:p1BorderRad
+    }
+
+
+    .notP2Turn {
+        @apply sm:playerTurnBorder
+    }
+
+    .notP2Turn::before {        
+        @apply sm:playerTurnDimensions sm:notYourTurnStyle sm:p2BorderRad
+    }
+    
+
+
+
+
+
+
+
+        /* Your Turn */
+    .player1Column {
+        @apply sm:playerTurnBorder
+    }
+
+    .player1Column::before {
+        animation: spin 1500ms infinite linear;
+        
+        @apply sm:playerTurnDimensions sm:playerTurnStyle sm:p1BorderRad
+    }
+
+    
+    .player2Column {
+        @apply sm:playerTurnBorder
+    }
+
+    .player2Column::before {
+        animation: spin reverse 1500ms infinite linear;
+        
+        @apply sm:playerTurnDimensions sm:playerTurnStyle sm:p2BorderRad      
+    }
+
+    @keyframes spin {
+        100%{transform: rotate(360deg);}
+    }
+    
+
+    
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
     .gameDie {
-        @apply w-4/5 max-w-[400px] h-[90%] max-h-[400px] bg-neutral-200 rounded-2xl shadow-lg shadow-blue-700 transition ease-linear
+        @apply h-full bg-neutral-200 transition ease-linear active:scale-[.80] duration-[15ms]
+        
+        sm:dieBtnLaptop sm:bg-neutral-500 sm:rounded-2xl sm:border-r-[6px] sm:border-b-[6px] sm:border-l-0 sm:border-neutral-800 sm:shadow-lg sm:shadow-fuchsia-900
+        
+        sm:transition sm:ease-linear sm:hover:bg-[#afafaf] sm:hover:shadow-2xl sm:hover:shadow-fuchsia-100 sm:hover:border-[#d4d4d4] sm:active:scale-100 sm:active:bg-[#dbdbdb] sm:active:border-white sm:active:shadow-dieShadowAct sm:duration-[15ms]
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

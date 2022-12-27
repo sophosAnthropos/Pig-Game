@@ -2,7 +2,7 @@
 module.exports = {
   content: [
     './src/Components/**/*.{html,tsx,ts,jsx,js}',
-    './src/Utilities/Logic/Array_Of_Images.tsx',
+    './src/Utilities/**/*.{ts,tsx,js,jsx}',
     './index.html'
   ],
   theme: {
@@ -11,9 +11,6 @@ module.exports = {
         'sm': '640px'
       },
       height: {
-        btnCon: '15%',
-        tenth: '10%',
-        dieRow: '30%',
         dieRowCon: '95%',
         pigOptCon: '40%',
       },
@@ -27,10 +24,14 @@ module.exports = {
       },
       boxShadow: {
         modBtn: '2px 2px 7px rgb(250 204 21)',
-        modBtnHov: '0 0 15px rgb(253, 224, 71), inset 2px 2px 0 rgb(234 179 8)',
-        dOShadow: '3px 3px 6px #1d4ed8,inset 2px 2px 6px #a3a3a3',
+        modBtnHov: '0 0 15px rgb(253, 224, 71)',
+        modBtnAct: 'inset 2px 2px 0 rgb(234 179 8)',
+        dOShadow: '3px 3px 6px #1d4ed8',
         dOShadowHov: '3px 3px 6px #1d4ed8, inset -2px -2px 6px #a8a8a8',
-        dieModEdges: 'inset 3px 4px 5px #1d4ed8'
+        dieModEdges: 'inset 3px 4px 5px #1d4ed8',
+        txtInFocus: 'inset 2px 3px 4px #111',
+        resetBtn: '3px 3px 9px #3b003b',
+        dieShadowAct:'10px 15px 50px 2px #fae8ff'
       },
       borderColor: {
         modalBBY: 'rgb(113 63 18)',
