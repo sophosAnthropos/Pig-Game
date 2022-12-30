@@ -10,7 +10,7 @@ export const App = () => {
   return (
       <div 
         className={`
-            fullContainers 
+            fullContainers
             sm:appLaptop
             ${appState != <WinnerScreen/> ? 'sm:bg-blue-400' : 'sm:bg-winBg'}
           `}

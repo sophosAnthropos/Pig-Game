@@ -52,27 +52,28 @@ export const gameDataRef: dataRefTypes = {
     name: {
         p1Name: `Player 1`,
         p2Name: `Player 2`
-      },
-      avatar: {
+    },
+    avatar: {
         index: {
-          p1Index: 0,
-          p2Index: 0
+            p1Index: 0,
+            p2Index: 0
         },
         type: {
-          p1Type: `standard`,
-          p2Type: `standard`
+            p1Type: `standard`,
+            p2Type: `standard`
         }
-      },
-      die: {
+    },
+    die: {
         color: `Black`,
         value: 1,
         face: `One`
-      },
-      winner: `Player`,
-      Arrays: {
+    },
+    winner: `Player`,
+    Arrays: {
         dieColors: ['Black', 'Blue', 'Green', 'Orange', 'Pink', 'Purple', 'Red', 'Yellow', 'Random'],
+
         avatars: [`standard`, `demon`, `fire`, `ice`, `earth`, `shadow`, `ghost`, `iron`, `robo`, `mystery`]
-      },
+    },
 };
 
 // gDRContext is passed as the type for createContext in Data_Context.tsx
@@ -173,6 +174,4 @@ export interface dpsStateTypes {
     p1Score: numberStates
     p2Score: numberStates
 }
-
-
 

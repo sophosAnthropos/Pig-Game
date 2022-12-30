@@ -51,12 +51,12 @@ export const TiDieRes = ({children}: {children : JSX.Element}) => {
             </section>
             <section 
                 className={`
-                    h-full flex justify-center items-end
+                    h-full flex justify-center items-center relative
 
                     sm:h-1/4 sm:items-center
                 `}
             >
-                <ResetBtn/>
+                <ResetBtn phase={1} />
             </section>
         </section>
     )
