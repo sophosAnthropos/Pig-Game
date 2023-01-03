@@ -5,7 +5,7 @@ export const How_To_Play = (): JSX.Element => {
     <div className={`w-full h-full px-5`}>
         <ul className={`w-full h-4/5 pl-4 pt-6 list-disc`}>
             <li className={`h2PTxt h2PList`}>
-                Get your TOTAL SCORE from 0️⃣ to 💯 before your opponent does.
+                Get your TOTAL SCORE from 0️⃣ to <span className={`text-xl text-red-700 font-bold`}>50</span> before your opponent does.
             </li>
             <li className={`h2PTxt h2PList`}>            
                 Start of every turn: POINTS STREAK = 0️⃣.
