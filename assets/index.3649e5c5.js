@@ -117,7 +117,7 @@ Error generating stack: `+o.message+`
                         w-full flex justify-center 
                         
                         sm:w-3/5 sm:h-full sm:items-end
-                    `,children:g("img",{src:`../../../../src/Assets/Images/pigIcon/0${e===1?r:l}_${e===1?o:i}PigIcon.png`,alt:`Pig face icon with ${e===1?o:i} like appearance`,className:"w-2/3  sm:playerAvatars"})})})]})},bu=({player:e})=>{const{p1Points:[t],p2Points:[n]}=O.exports.useContext(Mt);return g("section",{className:`
+                    `,children:g("img",{src:`./Images/pigIcon/0${e===1?r:l}_${e===1?o:i}PigIcon.png`,alt:`Pig face icon with ${e===1?o:i} like appearance`,className:"w-2/3  sm:playerAvatars"})})})]})},bu=({player:e})=>{const{p1Points:[t],p2Points:[n]}=O.exports.useContext(Mt);return g("section",{className:`
                 h-2/5 flex
                 
                 sm:justify-center sm:items-center sm:h-[27.5%]
@@ -129,7 +129,7 @@ Error generating stack: `+o.message+`
                         ${(()=>{if(e===1)return"w-full absolute top-[50%]  sm:inGameRstBtnLaptop";if(e===2)return"winRstBtnMobile sm:winRstBtnLaptop"})()} flex justify-center items-center transition ease-linear active:scale-[.9] duration-150
 
                         sm:items-start
-                  `,children:g("img",{src:"../../../../src/Assets/Images/controlIcons/resetIcon.png",alt:"Nuclear mushroom cloud representing the ultimate reset",className:`
+                  `,children:g("img",{src:"./Images/controlIcons/resetIcon.png",alt:"Nuclear mushroom cloud representing the ultimate reset",className:`
                               w-full h-full rounded-[.95rem] shadow-resetBtn
 
                               sm:transition sm:ease-linear sm:active:scale-[.97] sm:duration-[15ms]
