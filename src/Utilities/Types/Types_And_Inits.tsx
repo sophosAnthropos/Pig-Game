@@ -1,7 +1,7 @@
 import React from "react";
-import { How_To_Play } from "../../Components/01_Modals/Modal_Main_Content/00_Game_Explanation/How_To_Play";
-import { Select_Die } from "../../Components/01_Modals/Modal_Main_Content/01_Die_Selection/Select_Die";
-import { PlayersInputs } from "../../Components/01_Modals/Modal_Main_Content/02_Players_Inputs/Player_Inputs";
+import { How_To_Play } from "../../Components/01_Modals/Main_Content/00_Explanation/How_To_Play";
+import { Select_Die } from "../../Components/01_Modals/Main_Content/01_Die_Selection/Select_Die";
+import { PlayersInputs } from "../../Components/01_Modals/Main_Content/02_Players_Inputs/Player_Inputs";
 
 
 
