@@ -34,8 +34,12 @@
         font-family: 'Press Start 2P', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
 
-    .nameInput {
-        font-size: clamp(1rem, 2vw, 1.3rem);
+    .nameInputMobile {
+        font-size: clamp(.9rem, 3vh, 1.5rem);
+    }
+
+    .nameInputLaptop {
+        font-size: clamp(1.1rem, 1.5vw, 1.7rem);
     }
     
 
@@ -54,20 +58,26 @@
 
     /* Containers */
 
-    .fullContainers {
-        @apply w-full h-full sm:min-w-[650px]
+    .fullContainersMobile {
+        width: clamp(240px, 100%, 480px);
+        height: clamp(320px, 100%, 1000px);
+    }
+
+    .fullContainersLaptop {
+        width: clamp(481px, 100%, 2000px);
+        height: clamp(320px, 100%, 1000px);
     }
 
 
             /* Modal */
     
     .modalMobile {
-        width: clamp(360px, 100%, 499px);
-        height: clamp(667px, 100%, 1200px);
+        width: clamp(240px, 100%, 480px);
+        height: clamp(320px, 100%, 1000px);
     
     }
     .modalLaptop {
-        width: clamp(500px, 40%, 700px);
+        width: clamp(475px, 40%, 700px);
         height: clamp(600px, 80%, 700px);
     }
 
@@ -88,13 +98,19 @@
 
 
             /* Modal: How To play Content */
-    .h2PTxt {
-        font-size: clamp(1rem, 4vw, 1.25rem);
-        line-height: 1.4rem;
+    .h2PTxtMobile {
+        font-size: clamp(.6rem, 3vh, 1.3rem);
+        line-height: clamp(.7rem, 3vh, 3rem);
+    }
+    
+    .h2PTxtLaptop {
+        font-size: clamp(1.2rem, 1.7vw, 1.6rem);
+        line-height: clamp(1.2rem, 2vw, 2rem);
+        
     }
 
     .h2PList {
-        @apply w-full text-fuchsia-700 text-start h-[15.5%] list-disc
+        @apply w-full text-fuchsia-700 text-start h-[16.5%]
     }
     
 
@@ -123,7 +139,8 @@
     }
 
     .eachPig {
-        @apply w-full max-w-[75px] cursor-pointer transition  ease-linear active:scale-[.65] duration-[15ms] sm:w-[10%] sm:min-w-[42px] sm:max-w-[100px] sm:p-1 sm:border-none sm:rounded-full  sm:transition sm:ease-linear sm:hover:bg-neutral-300 sm:active:scale-[.80] sm:duration-100
+        width: clamp(30px, 10vh, 80px);
+        @apply cursor-pointer transition  ease-linear active:scale-[.65] duration-[15ms] sm:w-[10%] sm:min-w-[42px] sm:max-w-[100px] sm:p-1 sm:border-none sm:rounded-full  sm:transition sm:ease-linear sm:hover:bg-neutral-300 sm:active:scale-[.80] sm:duration-100
     }
 
 
@@ -154,12 +171,12 @@
 
 
     .mobileH2 {
-        font-size: clamp(1rem, 4vh, 3rem);
+        font-size: clamp(1.1rem, 4vh, 3rem);
     }
 
 
     .mobileH3 {
-        font-size: clamp(1.5rem, 7vw, 2rem);
+        font-size: clamp(1.2rem, 7vw, 2rem);
     }
 
 
@@ -175,13 +192,6 @@
     }
 
 
-    .playerTxtMobile {
-        font-size: clamp(1.5rem, 8vw, 3.25rem);
-        font-weight: 600;
-        letter-spacing: clamp(1px, .25vw, 2px);
-        -webkit-text-stroke: clamp(1px,.4vw, 4px) #fde047;
-        -webkit-text-fill-color: #60a5fa;
-    }
 
     
     .oinkMobile {
@@ -190,23 +200,49 @@
         -webkit-text-stroke: 1px #60a5fa;
         -webkit-text-fill-color: #fde047;
     }
+
+
+    .gameDieBtnMobile {
+        width: clamp(53px, 15vh, 200px);
+    }
+    
+    
+    .playerNameMobile {
+        font-size: clamp(1rem, 4vh, 7rem);
+    }
+
+    .playerTxtMobile {
+        font-weight: 600;
+        letter-spacing: clamp(1px, .25vw, 2px);
+        -webkit-text-stroke: clamp(1px,.4vw, 4px) #fde047;
+        -webkit-text-fill-color: #60a5fa;
+    }
+
+    
+    .playerAvatarMobile {
+        width: clamp(50px, 15vh, 150px);
+    }
     
 
+    .playerPointsMobile {
+        font-size: clamp(3rem, 12vh, 7rem);
+    }
+
     .scoreMobile {
-        @apply w-1/3 h-[17%] absolute bottom-0 bg-neutral-700 p-[5px] border-t-2 border-black
+        @apply w-1/3 h-1/5 absolute bottom-0 bg-neutral-700 p-[5px] border-t-2 border-black
     }
 
 
     .scoreTxtMobile {
         height: 50%;
-        font-size: clamp(.8rem, 1.8vh, 1.5rem);
+        font-size: clamp(.4rem, 1.8vh, 1.5rem);
         font-weight: 400;
         letter-spacing: 1.5px;
         color: #fde047;
     }
 
     .scoreNumMobile {
-        font-size: clamp(1rem, 6.5vh, 5rem);
+        font-size: clamp(.4rem, 7.5vh, 5rem);
     }
 
     .winnerMobile {
@@ -214,7 +250,7 @@
     }
 
     .kingPigMobile {
-        height: clamp(200px, 30vh, 300px);
+        height: clamp(120px, 30vh, 300px);
     }
     
     .hailTxtMobile {
@@ -222,8 +258,8 @@
     }
     
     .winRstBtnMobile {
-        width: clamp(160px, 20.6vmax, 180px);
-        height: clamp(65px, 10.1vmax, 80px);
+        width: clamp(120px, 20.6vmax, 180px);
+        height: clamp(50px, 10.1vmax, 80px);
         aspect-ratio: 1/1;
     }
 
@@ -248,12 +284,12 @@
 
         /*  */
     .appLaptop {
-        @apply min-h-[900px] relative flex justify-center items-center z-[100]
+        @apply relative flex justify-center items-center z-[100]
     }
 
 
     .gameLaptop {
-        @apply w-[90%] h-[90%] min-w-[640px] max-w-[1200px] min-h-[600px] relative justify-center items-center z-[500]
+        @apply w-[90%] h-[90%] min-w-[626px] max-w-[1200px] min-h-[600px] justify-center items-center z-[500]
     }
 
     .laptopH1 {
@@ -265,12 +301,11 @@
     }
 
     .laptopH3 {
-        font-size: clamp(1.5rem, 3vw, 1.7rem);
+        font-size: clamp(1.5rem, 2vw, 1.8rem);
     }
 
-
     .modalBtnTxt-laptop {
-        font-size: clamp(.5rem, 3.5vw, 1.7rem);
+        font-size: clamp(1.5rem, 2vw, 2rem);
     }
 
 
@@ -295,7 +330,7 @@
     }
 
     .playerNames {
-        font-size: clamp(2rem, 4.2vw, 3.5rem);
+        font-size: clamp(2rem, 4.2vw, 3rem);
     }
 
     .playerAvatars {
@@ -317,13 +352,13 @@
     }
 
     .scoreBtn {
-        width: clamp(135px, 14vmax, 185px);
-        height: clamp(135px, 14vmax, 185px);
+        width: clamp(135px, 12vmax, 162px);
+        height: clamp(135px, 12vmax, 162px);
         aspect-ratio: 1/1;
     }
 
     .scoreTxtLaptop {
-        font-size: clamp(.8rem, 1.5vw, 1.2rem);
+        font-size: clamp(.8rem, 1.3vw, 1.1rem);
         font-weight: 600;
     }
 

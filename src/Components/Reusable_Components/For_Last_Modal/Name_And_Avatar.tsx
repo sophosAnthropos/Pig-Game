@@ -8,8 +8,10 @@ export const NamesAndAvatars =  ({children, player}: {children: JSX.Element[], p
     return (
         <div 
             className={`
-                w-full h-1/2 flex flex-col items-center justify-center ${player === 1 ? 'sm:border-b-[3px] sm:border-fuchsia-500' : 'sm:border-none'} 
-
+                w-full h-1/2 flex flex-col items-center justify-center 
+                
+                
+                ${player === 1 ? 'sm:border-b-[3px] sm:border-fuchsia-500' : 'sm:border-none'} 
                 sm:h-[45%] sm:px-4
             `}
         >
@@ -22,9 +24,9 @@ export const NamesAndAvatars =  ({children, player}: {children: JSX.Element[], p
             >
                 <h3 
                     className={`
-                        w-1/3 h-[45%] flex items-center justify-center text-fuchsia-500 mobileH3
+                        w-2/3 h-[45%] flex items-center justify-center text-fuchsia-500 mobileH3
                         
-                        sm:h-3/4 sm:font-bold sm:laptopH3
+                        sm:w-1/3 sm:h-4/5 sm:font-bold sm:laptopH3
                     `}
                 >
                     {player === 1 ? `PLAYER 1` : `PLAYER 2`}
@@ -45,10 +47,16 @@ export const NamesAndAvatars =  ({children, player}: {children: JSX.Element[], p
                             player === 1 ? dataRef.current.name.p1Name = `${e.target.value}` : dataRef.current.name.p2Name = `${e.target.value}`
                         }}
                         className={`
-                            w-full h-full pl-4 mobileTxtInput placeholder:nameInput placeholder:text-neutral-500 text-fuchsia-600 outline-none border-neutral-800 focus:text-fuchsia-500 focus:bg-neutral-700 focus:placeholder:text-fuchsia-200
+                            w-full h-full text-center mobileTxtInput placeholder:nameInputMobile placeholder:text-neutral-500 outline-none border-black 
+                            
+                            focus:text-fuchsia-400 focus:bg-neutral-800 focus:placeholder:text-fuchsia-200
                             focus:shadow-txtInFocus focus:border-t-2 focus:border-l-2
 
-                            sm:w-[95%] sm:h-2/5 sm:rounded-[50px] sm:pl-0 sm:bg-blue-400 sm:nameInput sm:text-center sm:shadow-inner sm:shadow-blue-700 sm:placeholder:text-fuchsia-200
+                            sm:w-[95%] sm:h-2/5 
+                            sm:rounded-[50px] sm:bg-blue-400 
+                            sm:nameInputLaptop sm:text-center sm:shadow-inner sm:shadow-blue-700
+                            sm:placeholder:nameInputLaptop
+                            sm:placeholder:text-fuchsia-200
                         `}
                     />
                 </form>
@@ -62,7 +70,7 @@ export const NamesAndAvatars =  ({children, player}: {children: JSX.Element[], p
             >
                 <div 
                     className={`
-                        w-full h-full bg-blue-400 grid grid-cols-5 items-center px-2
+                        w-full h-full bg-blue-400 grid grid-cols-5  items-center justify-items-center px-2
 
                         sm:w-[95%] sm:h-3/5 sm:rounded-[50px] sm:bg-blue-400 sm:shadow-inner sm:shadow-blue-700 sm:flex sm:justify-around
 

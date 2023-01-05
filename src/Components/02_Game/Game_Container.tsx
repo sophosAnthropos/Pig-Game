@@ -53,7 +53,7 @@ export const GameContainer = (): JSX.Element => {
 
 
       return (
-            <div className='fullContainers flex sm:gameLaptop'>
+            <div className='fullContainersMobile relative flex sm:fullContainersLaptop sm:gameLaptop'>
                         
                   <Column player={1} yourTurn={playerOne} >
                         <ColumnHeader player={1}/>

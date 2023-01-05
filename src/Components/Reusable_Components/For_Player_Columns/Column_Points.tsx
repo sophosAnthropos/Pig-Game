@@ -6,14 +6,14 @@ export const TurnPoints = ({player}: {player: number}): JSX.Element => {
     return (
         <section 
             className={`
-                h-2/5 flex
+                h-[30%] flex
                 
                 sm:justify-center sm:items-center sm:h-[27.5%]
             `}
         >
             <p 
                 className={`
-                    w-full h-full headings text-[6rem] playerTxtMobile flex justify-center items-center
+                    w-full h-full headings playerPointsMobile playerTxtMobile flex justify-center items-center
                     
                     sm:w-1/2 sm:items-center sm:pointsLaptop
                 `}

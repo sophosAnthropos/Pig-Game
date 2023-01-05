@@ -5,18 +5,23 @@ export const TiDieRes = ({children}: {children : JSX.Element}) => {
     return (
         <section 
             className={`
-                w-1/3 h-full absolute z-[800] left-1/2 translate-x-[-50%] sm:h-[90%]
+                w-1/3 h-full flex flex-col justify-center absolute z-[800] left-1/2 translate-x-[-50%] 
+                
+                sm:h-[90%]
             `}
         >
             <section 
                 className={`
-                    w-[304%] bg-neutral-700 absolute top-[-.2%] left-[-104%] flex justify-center border-b-2 border-black
+                    w-[304%] h-1/5 bg-neutral-700 absolute top-[-.2%] left-[-104%] flex justify-center border-b-2 border-black
 
                     sm:w-full sm:h-1/4 sm:relative sm:top-0 sm:left-0 sm:bg-transparent sm:flex-col sm:border-none
                 `}
             >
                 <article 
-                    className={`w-1/2 sm:w-full sm:h-2/3 sm:flex sm:justify-center`}
+                    className={`
+                        w-1/2 flex justify-center
+                        sm:w-full sm:h-2/3
+                    `}
                 >
                     <h1 
                         className={` 
@@ -42,7 +47,9 @@ export const TiDieRes = ({children}: {children : JSX.Element}) => {
             </section>
             <section 
                 className={`
-                    w-[101%] h-[17%] bg-neutral-700 absolute bottom-0 left-[-1px] flex justify-center border-t-2 border-black
+                    w-[102%] h-1/5 bg-neutral-700 
+                    absolute bottom-0 left-[-1px]
+                    flex justify-center border-t-2 border-black
 
                     sm:w-full sm:h-1/2 sm:relative sm:items-center sm:bg-transparent sm:border-none
                 `}
@@ -51,7 +58,7 @@ export const TiDieRes = ({children}: {children : JSX.Element}) => {
             </section>
             <section 
                 className={`
-                    h-full flex justify-center items-center relative
+                    h-1/6 flex justify-center items-center relative
 
                     sm:h-1/4 sm:items-center
                 `}

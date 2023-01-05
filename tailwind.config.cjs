@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        'sm': '640px'
+        'sm': '481px'
       },
       height: {
         dieRowCon: '95%',
@@ -29,7 +29,7 @@ module.exports = {
         dOShadow: '3px 3px 6px #1d4ed8',
         dOShadowHov: '3px 3px 6px #1d4ed8, inset -2px -2px 6px #a8a8a8',
         dieModEdges: 'inset 3px 4px 5px #1d4ed8',
-        txtInFocus: 'inset 2px 3px 4px #111',
+        txtInFocus: 'inset 2px 3px 4px #000',
         resetBtn: '3px 3px 9px #3b003b',
         dieShadowAct:'10px 15px 50px 2px #fae8ff'
       },
@@ -40,9 +40,6 @@ module.exports = {
       borderWidth: {
         modalBB1: '1px',
         modalBB2: '2px',
-      },
-      backgroundColor: {
-        winBg: 'url(`./src/Assets/Images/backGroundImage/05_piggyWinner.jpg`)'
       }
     },
   },

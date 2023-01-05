@@ -5,7 +5,7 @@ export const Column = ({children, player, yourTurn: {turn, backGround}}: {childr
   return (
     <section
         className={`
-          w-[1/2] h-full ${turn}
+          w-1/2 h-full ${turn}
           
           ${player === 1 ? `sm:rounded-tl-[60px] sm:rounded-bl-[60px]` : `sm:rounded-tr-[60px] sm:rounded-br-[60px]`} 
           sm:w-[48%] sm:h-[90%] sm:flex sm:justify-center sm:items-center
@@ -23,7 +23,9 @@ export const Column = ({children, player, yourTurn: {turn, backGround}}: {childr
 
         <div
             className={`
-                h-full sm:w-3/5 sm:min-w-[240px] flex flex-col
+                w-full h-full flex flex-col justify-center 
+                
+                sm:w-3/5 sm:min-w-[240px]
             `}
         >
           

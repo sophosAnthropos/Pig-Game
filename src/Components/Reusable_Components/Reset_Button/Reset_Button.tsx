@@ -68,7 +68,7 @@ export const ResetBtn = ({phase}: {phase: number}): JSX.Element => {
                         src="../../../../src/Assets/Images/controlIcons/resetIcon.png" alt="Nuclear mushroom cloud representing the ultimate reset"
 
                         className={`
-                              w-full h-full rounded-[.95rem] shadow-resetBtn
+                              w-full h-full rounded-[.55rem] shadow-resetBtn
 
                               sm:transition sm:ease-linear sm:active:scale-[.97] sm:duration-[15ms]
                         `}

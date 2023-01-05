@@ -18,23 +18,23 @@ export const ColumnHeader = ({player}: {player: number}): JSX.Element => {
     return (
         <header 
             className={`
-                w-full h-1/2 flex flex-col
+                w-full h-[30%] flex flex-col
                 
                 sm:h-[45%]
             `}
         >
             <article 
                 className={`
-                    w-full h-1/2 flex justify-center items-end 
+                    w-full h-1/2 flex justify-center items-center 
                     
-                     sm:h-[35%] sm:items-center
+                     sm:h-[35%]
                 `}
             >
                 <h2 
                     className={`
-                        w-[90%] headings playerTxtMobile flex justify-center items-end
+                        w-[90%] headings playerNameMobile playerTxtMobile flex justify-center items-end
                         
-                        sm:w-full playerNames
+                        sm:w-full sm:playerNames
                     `}
                 >
                     {player === 1 ? p1Name : p2Name}
@@ -59,7 +59,7 @@ export const ColumnHeader = ({player}: {player: number}): JSX.Element => {
 
                         alt={`Pig face icon with ${player === 1 ? p1Type : p2Type} like appearance`}
 
-                        className={`w-2/3  sm:playerAvatars`}
+                        className={`playerAvatarMobile sm:playerAvatars`}
                     />
                 </div>
             </article>
